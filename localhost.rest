@@ -1,0 +1,59 @@
+// get full list of expenses
+GET http://localhost:5001/api/expenses
+
+// get a list of total sum
+###
+GET http://localhost:5001/api/expenses/expenses/totalsum
+
+// get expense by ID
+###
+GET http://localhost:5001/api/expenses/67
+
+// filter by category type
+###
+GET http://localhost:5001/api/expenses/category/other
+###
+GET http://localhost:5001/api/expenses/category/shop
+###
+GET http://localhost:5001/api/expenses/category/food
+
+// filter by month
+###
+GET http://localhost:5001/api/expenses/month/5
+
+// get by amount less than 10
+###
+GET http://localhost:5001/api/expenses/lt10/10
+
+// get by amount greater than 10
+###
+GET http://localhost:5001/api/expenses/gt10/10
+
+// get by shop name
+###
+GET http://localhost:5001/api/expenses/shop/Alepa
+
+// DELETE expense by id
+###
+DELETE http://localhost:5001/api/expenses/30
+
+// POST new expense
+###
+POST http://localhost:5001/api/expenses
+Content-Type: application/json
+
+{"shop_name": "Rituals",
+"category_id": 3,
+"amount": 0.44,
+"expense_date": "2020-01-10T22:00:00.000Z"}
+
+// update expense by id
+###
+PUT http://localhost:5001/api/expenses/425
+Content-Type: application/json
+
+{"shop_name": "Power",
+"category_id": 3,
+"amount": 37.12,
+"expense_date": "2023-01-26",
+"expense_id": 425}
